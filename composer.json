@@ -1,0 +1,18 @@
+{
+    "name": "ywmelo/translate",
+    "description": "Youdao translate api.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Melo Yang",
+            "email": "ywmelo@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Youdao\\Translate\\": "src/"
+        }
+    }
+}
