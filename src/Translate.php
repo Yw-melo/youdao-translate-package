@@ -18,14 +18,14 @@ class Translate
     {
         $args = array(
             'q' => $query,
-            'appKey' => env('YOUDAO_TRANSLATE_API_KEY'),
+            'appKey' => config('youdao.apiKey'),
             'salt' => rand(10000,99999),
             'from' => $from,
             'to' => $to,
 
         );
-        $args['sign'] = $this->buildSign(env('YOUDAO_TRANSLATE_API_KEY'), $query, $args['salt'], env('YOUDAO_TRANSLATE_API_SECRET'));
-        $ret = $this->call(env('YOUDAO_TRANSLATE_API_URL'), $args);
+        $args['sign'] = $this->buildSign(config('youdao.apiKey'), $query, $args['salt'], config('youdao.apiSecret'));
+        $ret = $this->call(config('youdao.apiUrl'), $args);
         // echo $ret;
         $ret = json_decode($ret, true);
         return $ret;
