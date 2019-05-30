@@ -12,9 +12,9 @@ class TranslateServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('translate');
-
-        return new Translate();
+        $this->app->bind('translate', function() {
+            return new Translate();
+        });
     }
 
     /**
@@ -24,6 +24,8 @@ class TranslateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        $this->publishes([
+            dirname(__DIR__).'/config/youdao.php' => config_path('youdao.php'),
+        ]);
     }
 }
