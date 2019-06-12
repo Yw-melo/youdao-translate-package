@@ -25,7 +25,7 @@ class TranslateServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            dirname(__DIR__).'/config/youdao.php' => config_path('youdao.php'),
-        ]);
+            dirname(__DIR__).'/config/youdao.php' => config_path('youdao.php')
+        ], 'translate');
     }
 }
